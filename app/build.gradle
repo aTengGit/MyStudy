@@ -3,6 +3,20 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('mystudy.jks')
+            storePassword '123456'
+            keyAlias 'mystudy'
+            keyPassword '123456'
+        }
+        debug {
+            storeFile file('mystudy.jks')
+            storePassword '123456'
+            keyAlias 'mystudy'
+            keyPassword '123456'
+        }
+    }
     compileSdk 32
 
     defaultConfig {
@@ -16,11 +30,27 @@ android {
     }
 
     buildTypes {
+        debug {
+            //是否混淆
+            minifyEnabled false
+            //是否移除无用资源
+            zipAlignEnabled true
+            //混淆的配置文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "mystudy.apk"
+            }
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
