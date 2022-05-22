@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lhu.mystudy">
+    package="com.lhu.testbinder" >
+
+    <permission android:name="android.intent.action.BOOT_COMPLETED"></permission>
 
     <application
         android:allowBackup="true"
@@ -8,17 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyStudy">
-        <receiver
-            android:name=".broadcast.TestBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter android:priority="1000">
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="com.lhu.action.START_SERVICE"></action>
-            </intent-filter>
-        </receiver>
-
+        android:theme="@style/Theme.MyStudy" >
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -28,7 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".broadcast.TestBroadcastActivity"/>
     </application>
 
 </manifest>
