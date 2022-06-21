@@ -4,6 +4,7 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -12,12 +13,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/mycamera" />
             <option value="$PROJECT_DIR$/testbinder" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <!-- 底下这个配置可以运行Java main函数  -->
-        <option name="delegatedBuild" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
